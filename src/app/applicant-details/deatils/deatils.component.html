@@ -1,0 +1,121 @@
+<h1 style="text-align: center;" *ngIf="!applicantID">Add Applicant Details</h1>
+<h1 style="text-align: center;" *ngIf="applicantID">Edit Applicant Deails</h1>
+<form class="row g-3" [formGroup]="applicantDetailsForm" (ngSubmit)="onSubmit()">
+  <div class="col-md-4">
+    <label for="validationServer01" class="form-label">First name</label>
+    <input type="text" class="form-control is-valid" formControlName="firstName" id="firstName">
+    <!-- <div class="valid-feedback">
+        Looks good!
+      </div> -->
+    <div
+      *ngIf="applicantDetailsForm.controls['firstName'].invalid && (applicantDetailsForm.controls['firstName'].dirty || applicantDetailsForm.controls['firstName'].touched)"
+      class="valid-feedback">
+      <div *ngIf="applicantDetailsForm.controls['firstName'].errors?.['required']">
+        First Name is required.
+      </div>
+      <div *ngIf="applicantDetailsForm.controls['firstName'].errors?.['pattern']">
+       First Name should be aplhebtics only of max lenght 10.
+      </div>
+    </div>
+    <!-- <p *ngIf="applicantDetailsForm.controls['firstName'].invalid && applicantDetailsForm.touched">Name is required</p> -->
+  </div>
+  <div class="col-md-4">
+    <label for="validationServer02" class="form-label">Last name</label>
+    <input type="text" class="form-control is-valid" formControlName="lastName" id="validationServer02">
+    <!-- <div class="valid-feedback">
+        Looks good!
+      </div> -->
+      <div
+      *ngIf="applicantDetailsForm.controls['lastName'].invalid && (applicantDetailsForm.controls['lastName'].dirty || applicantDetailsForm.controls['lastName'].touched)"
+      class="valid-feedback">
+      <div *ngIf="applicantDetailsForm.controls['lastName'].errors?.['required']">
+        Last Name is required.
+      </div>
+      <div *ngIf="applicantDetailsForm.controls['lastName'].errors?.['pattern']">
+        Last Name should be aplhebtics only of max lenght 10.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServerUsername" class="form-label">Username</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend3">@</span>
+      <input type="text" class="form-control is-valid" formControlName="userName" id="validationServerUsername"
+        aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback">
+      <!-- <div id="validationServerUsernameFeedback" class="invalid-feedback">
+          Please choose a username.
+        </div> -->
+        <div
+      *ngIf="applicantDetailsForm.controls['userName'].invalid && (applicantDetailsForm.controls['userName'].dirty || applicantDetailsForm.controls['userName'].touched)"
+      class="valid-feedback">
+      <div *ngIf="applicantDetailsForm.controls['userName'].errors?.['required']">
+        User Name is required.
+      </div>
+      <div *ngIf="applicantDetailsForm.controls['userName'].errors?.['pattern']">
+       User Name should be aplhebtics only of max lenght 10.
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationServer03" class="form-label">City</label>
+    <input type="text" class="form-control is-valid" formControlName="city" id="validationServer03"
+      aria-describedby="validationServer03Feedback">
+    <!-- <div id="validationServer03Feedback" class="invalid-feedback">
+        Please provide a valid city.
+      </div> -->
+      <div
+      *ngIf="applicantDetailsForm.controls['city'].invalid && (applicantDetailsForm.controls['city'].dirty || applicantDetailsForm.controls['city'].touched)"
+      class="valid-feedback">
+      <div *ngIf="applicantDetailsForm.controls['city'].errors?.['required']">
+        City is required.
+      </div>
+      <div *ngIf="applicantDetailsForm.controls['city'].errors?.['pattern']">
+       City should be aplhebtics only of max lenght 10.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationServer04" class="form-label">State</label>
+    <select class="form-select is-valid" formControlName="state" id="validationServer04"
+      aria-describedby="validationServer04Feedback">
+      <option>AP</option>
+      <option>TN</option>
+    </select>
+    <!-- <div id="validationServer04Feedback" class="invalid-feedback">
+        Please select a valid state.
+      </div> -->
+      <div
+      *ngIf="applicantDetailsForm.controls['state'].invalid && (applicantDetailsForm.controls['state'].dirty || applicantDetailsForm.controls['state'].touched)"
+      class="valid-feedback">
+      <div *ngIf="applicantDetailsForm.controls['state'].errors?.['required']">
+        State is required.
+      </div>
+      
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationServer05" class="form-label">Zip</label>
+    <input type="text" class="form-control is-valid" formControlName="pincode" id="validationServer05"
+      aria-describedby="validationServer05Feedback" required>
+    <!-- <div id="validationServer05Feedback" class="invalid-feedback">
+        Please provide a valid zip.
+      </div> -->
+      <div
+      *ngIf="applicantDetailsForm.controls['pincode'].invalid && (applicantDetailsForm.controls['pincode'].dirty || applicantDetailsForm.controls['pincode'].touched)"
+      class="valid-feedback">
+      <div *ngIf="applicantDetailsForm.controls['pincode'].errors?.['required']">
+        Pincode is required.
+      </div>
+      <div *ngIf="applicantDetailsForm.controls['pincode'].errors?.['pattern']">
+       Pincode should be aplhebtics only of max lenght 10.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button style="margin-left:1px;" [disabled]="!applicantDetailsForm.valid" class="btn btn-primary" type="submit">Submit form</button>
+    <button style="margin-left:20px;" type="button" class="btn btn-warning" (click)="onCancel()">Cancel</button>
+    <button style="margin-left:20px;" type="button" class="btn btn-info" [routerLink]="'/'">Go Back</button>
+  </div>
+</form>

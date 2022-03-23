@@ -1,0 +1,32 @@
+
+<div class="center">
+  <button type="button" class="btn btn-primary" [routerLink]="'/applicant-details'">Add New Applicant</button>
+</div>
+<table class="table table-sm">
+  <caption>List of users</caption>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Applicant ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">User Name</th>
+        <th schope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let applicant of applicantList">
+        <th scope="row">{{applicant.id}}</th>
+        <td>{{applicant.firstName}}</td>
+        <td>{{applicant.lastName}}</td>
+        <td>{{applicant.userName}}</td>
+        <td><button style="margin-left:1px;" type="button" class="btn btn-success" (click)="updateApplicant(applicant)">Edit</button>
+          <button style="margin-left:20px;" type="button" class="btn btn-danger" (click)="deleteApplicant(applicant)">Delete</button></td>
+        
+
+      </tr>
+      
+    </tbody>
+  </table>
+  
+</table>

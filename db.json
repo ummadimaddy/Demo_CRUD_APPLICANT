@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "firstName": "madhav",
+      "lastName": "reddy",
+      "userName": "umadhav",
+      "city": "ANANTAPUR",
+      "state": "TN",
+      "pincode": "515001",
+      "id": 1
+    },
+    {
+      "firstName": "ummadi",
+      "lastName": "reddy",
+      "userName": "umadhav",
+      "city": "ANANTAPUR",
+      "state": "TN",
+      "pincode": "515001",
+      "id": 2
+    },
+    {
+      "firstName": "ummadi",
+      "lastName": "madhav",
+      "userName": "umadhav",
+      "city": "ANANTAPUR",
+      "state": "TN",
+      "pincode": "515001",
+      "id": 3
+    },
+    {
+      "firstName": "ummadi",
+      "lastName": "maddy",
+      "userName": "ummadimadd",
+      "city": "atp",
+      "state": "TN",
+      "pincode": "515054",
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "email": "Maddy@gmail.com",
+    "password": "Maddy@55"
+  }
+}

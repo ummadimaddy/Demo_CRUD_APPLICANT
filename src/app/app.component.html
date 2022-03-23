@@ -1,0 +1,4 @@
+<h1 style="text-align: center;">Welcome to {{title}}</h1>
+<button type="button" style="margin-left: 750px;" class="btn btn-primary" *ngIf="!userStatus" [routerLink]="'login'">Login</button>
+<button type="button"  style="margin-left: 1500px;" class="btn btn-success" *ngIf="userStatus" (click)="logoutUser()">LogOut</button>
+<router-outlet></router-outlet>
